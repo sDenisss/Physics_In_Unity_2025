@@ -17,6 +17,10 @@ public class PushCube : MonoBehaviour
     public TMP_Text forceText;
     public TMP_Text statusText;
     public TMP_Text distanceText;
+
+    public TMP_InputField fricionCoefInput;
+    public TMP_InputField cubesMassInput;      
+    public TMP_InputField playerForceInput;
     
     // Расчетные величины
     private float gravity = 9.81f;
@@ -35,9 +39,13 @@ public class PushCube : MonoBehaviour
         normalForce = mass * gravity;
         maxStaticFriction = staticFrictionCoefficient * normalForce;
         kineticFriction = kineticFrictionCoefficient * normalForce;
-        
+
         initialPosition = objectRb.position;
         testResults = new TestResult[3];
+
+        fricionCoefInput.text = staticFrictionCoefficient.ToString();
+        cubesMassInput.text = mass.ToString();
+        playerForceInput.text = appliedForce.ToString();
         
         UpdateUI();
     }
@@ -141,9 +149,7 @@ public class PushCube : MonoBehaviour
         
         if (statusText != null)
         {
-            string status = isMoving ? "ДВИЖЕТСЯ" : "ПОКОИТСЯ";
-            statusText.text = $"Статус: {status}\n" +
-                            $"Скорость: {objectRb.linearVelocity.magnitude:F2} m/s";
+            statusText.text = $"Скорость: {objectRb.linearVelocity.magnitude:F2} m/s";
         }
         
         if (distanceText != null)
