@@ -10,8 +10,14 @@ public class BallLauncher : MonoBehaviour
     public LineRenderer trajectoryLine;
     
     [Header("Launch Settings")]
-    public float currentSpeed = 10f;
+    public float currentSpeed = 5f;
     public float currentAngle = 45f;
+
+    [Header("Ball Physics Settings")]
+    public float ballMass = 1f;           // Масса шара (кг)
+    public float ballDrag = 0f;           // Сопротивление воздуха
+    public float ballAngularDrag = 0.05f; // Сопротивление вращению
+    public PhysicsMaterial ballPhysicsMaterial; // Физический материал для упругости
     
     [Header("UI References")]
     public TMP_InputField speedInputField;
@@ -61,14 +67,6 @@ public class BallLauncher : MonoBehaviour
         trajectoryLine.endWidth = 0.05f;
         trajectoryLine.useWorldSpace = true;
         
-        // Создаем материал если его нет
-        if (trajectoryLine.material == null)
-        {
-            Material newMaterial = new Material(Shader.Find("Unlit/Color"));
-            newMaterial.color = Color.red;
-            trajectoryLine.material = newMaterial;
-        }
-        
         trajectoryLine.startColor = Color.red;
         trajectoryLine.endColor = Color.red;
         
@@ -112,11 +110,29 @@ public class BallLauncher : MonoBehaviour
         currentBall = Instantiate(ballPrefab, spawnPoint.position, Quaternion.identity);
         currentBallRigidbody = currentBall.GetComponent<Rigidbody>();
         
+        // ИСПРАВЛЕНИЕ: Сначала проверяем наличие Rigidbody, потом настраиваем
         if (currentBallRigidbody == null)
         {
             currentBallRigidbody = currentBall.AddComponent<Rigidbody>();
         }
         
+        // НАСТРОЙКА ФИЗИЧЕСКИХ СВОЙСТВ ШАРА:
+        // Масса влияет на инерцию - чем больше масса, тем сложнее изменить движение
+        currentBallRigidbody.mass = ballMass;
+        
+        // Drag - сопротивление движению (0 = нет сопротивления воздуха)
+        currentBallRigidbody.linearDamping = ballDrag;
+        
+        // Angular Drag - сопротивление вращению
+        currentBallRigidbody.angularDamping = ballAngularDrag;
+        
+        // Включаем гравитацию для шара
+        currentBallRigidbody.useGravity = true;
+        
+        // Настраиваем коллайдер для упругости
+        SetupBallCollider();
+        
+        // Делаем шар кинематическим до запуска
         currentBallRigidbody.isKinematic = true;
         isBallLaunched = false;
         
@@ -124,6 +140,28 @@ public class BallLauncher : MonoBehaviour
         trajectoryLine.enabled = true;
     }
 
+    void SetupBallCollider()
+    {
+        // Получаем или добавляем коллайдер шару
+        SphereCollider collider = currentBall.GetComponent<SphereCollider>();
+        if (collider == null)
+        {
+            collider = currentBall.AddComponent<SphereCollider>();
+        }
+
+        // НАСТРОЙКА ФИЗИЧЕСКОГО МАТЕРИАЛА ДЛЯ УПРУГОСТИ:
+        // Создаем физический материал если он не назначен
+        if (ballPhysicsMaterial == null)
+        {
+            ballPhysicsMaterial = new PhysicsMaterial();
+            ballPhysicsMaterial.bounciness = 0.8f;    // Коэффициент упругости (0-1)
+            ballPhysicsMaterial.dynamicFriction = 0.1f; // Трение при движении
+            ballPhysicsMaterial.staticFriction = 0.1f;  // Трение покоя
+        }
+
+        collider.material = ballPhysicsMaterial;
+    }
+    
     void ForceUpdateTrajectory()
     {
         // Принудительное обновление траектории
@@ -133,82 +171,149 @@ public class BallLauncher : MonoBehaviour
 
     void UpdateTrajectoryPreview()
     {
+        // Проверяем, доступен ли LineRenderer для отрисовки траектории
         if (trajectoryLine == null || !trajectoryLine.enabled) return;
         
-        // Рассчитываем направление полета
+        // ПРЕОБРАЗОВАНИЕ УГЛА: Переводим угол из градусов в радианы
+        // Формула: угол_в_радианах = угол_в_градусах × (π / 180)
+        // Mathf.Deg2Rad - константа, равная π/180 ≈ 0.0174533
         float angleInRadians = currentAngle * Mathf.Deg2Rad;
+        
+        // РАЗЛОЖЕНИЕ ВЕКТОРА СКОРОСТИ НА КОМПОНЕНТЫ:
+        // Вектор начальной скорости раскладывается на горизонтальную (X) и вертикальную (Y) составляющие
+        // Формулы:
+        // Vx = V₀ × cos(α) - горизонтальная компонента скорости (постоянная)
+        // Vy = V₀ × sin(α) - вертикальная компонента скорости (изменяется под действием гравитации)
         Vector3 startVelocity = new Vector3(
-            Mathf.Cos(angleInRadians) * currentSpeed, 
-            Mathf.Sin(angleInRadians) * currentSpeed, 
-            0
+            Mathf.Cos(angleInRadians) * currentSpeed,  // Vx = V₀·cos(α)
+            Mathf.Sin(angleInRadians) * currentSpeed,  // Vy = V₀·sin(α)
+            0  // Z-компонента равна 0 (движение в 2D плоскости)
         );
 
-        // Настройка точек траектории
+        // НАСТРОЙКА ЛИНИИ ТРАЕКТОРИИ:
+        // Устанавливаем количество точек для построения плавной кривой
         int pointsCount = 50;
         trajectoryLine.positionCount = pointsCount;
 
-        Vector3 startPosition = spawnPoint.position; // Используем позицию спавна
+        // НАЧАЛЬНАЯ ПОЗИЦИЯ: Точка, откуда начинается движение (позиция спавна шара)
+        Vector3 startPosition = spawnPoint.position;
 
-        // Рассчитываем позиции для каждой точки
+        // РАСЧЕТ ТОЧЕК ТРАЕКТОРИИ:
+        // Для каждой точки временной шкалы рассчитываем позицию шара
         for (int i = 0; i < pointsCount; i++)
         {
-            float simulationTime = i * 0.1f;
-            
-            // Формула движения: S = V₀t + (at²)/2
+            // ВРЕМЯ СИМУЛЯЦИИ: 
+            // Каждая точка соответствует определенному моменту времени полета
+            // simulationTime = номер_точки × временной_шаг
+            float simulationTime = i * 0.1f;  // шаг времени = 0.1 секунды
+                
+            // ФОРМУЛА ДВИЖЕНИЯ ТЕЛА ПОД УГЛОМ К ГОРИЗОНТУ:
+            // Вектор перемещения S рассчитывается по формуле:
+            // S = V₀·t + (a·t²)/2
+            // где:
+            // V₀·t - перемещение за счет начальной скорости (равномерное движение)
+            // (a·t²)/2 - перемещение за счет ускорения (равноускоренное движение)
             Vector3 displacement = startVelocity * simulationTime + 
-                                  Physics.gravity * simulationTime * simulationTime * 0.5f;
+                                Physics.gravity * simulationTime * simulationTime * 0.5f;
             
+            // ПОЗИЦИЯ ТОЧКИ ТРАЕКТОРИИ:
+            // Рассчитываем мировые координаты точки на траектории
+            // pointPosition = начальная_позиция + перемещение
             Vector3 pointPosition = startPosition + displacement;
+            
+            // УСТАНОВКА ПОЗИЦИИ В LineRenderer:
+            // Записываем рассчитанную позицию в соответствующую точку линии
             trajectoryLine.SetPosition(i, pointPosition);
         }
     }
 
     public void OnSpeedInputChanged(string newValue)
     {
+        // ОБРАБОТКА ИЗМЕНЕНИЯ СКОРОСТИ:
+        // Преобразуем текстовое значение в число и проверяем корректность
         if (float.TryParse(newValue, out float result) && result > 0)
         {
+            // Устанавливаем новое значение скорости (в условных единицах)
             currentSpeed = result;
         }
         else
         {
+            // ВОССТАНОВЛЕНИЕ ПРИ НЕКОРРЕКТНОМ ВВОДЕ:
+            // Если введено некорректное значение, восстанавливаем предыдущее
             speedInputField.text = currentSpeed.ToString();
         }
     }
 
     public void OnAngleInputChanged(string newValue)
     {
+        // ОБРАБОТКА ИЗМЕНЕНИЯ УГЛА:
+        // Преобразуем текстовое значение в число
         if (float.TryParse(newValue, out float result))
         {
+            // ОГРАНИЧЕНИЕ ДИАПАЗОНА УГЛА:
+            // Угол броска ограничиваем диапазоном от 0° до 90°
+            // 0° - горизонтальный бросок, 90° - вертикальный вверх
             currentAngle = Mathf.Clamp(result, 0, 90);
+            
+            // ОБНОВЛЕНИЕ ОТОБРАЖАЕМОГО ЗНАЧЕНИЯ:
+            // Показываем фактическое значение угла (после применения ограничений)
             angleInputField.text = currentAngle.ToString();
         }
         else
         {
+            // ВОССТАНОВЛЕНИЕ ПРИ НЕКОРРЕКТНОМ ВВОДЕ
             angleInputField.text = currentAngle.ToString();
         }
     }
 
     void OnStartButtonClick()
     {
+        // ПРОВЕРКА ВОЗМОЖНОСТИ ЗАПУСКА:
+        // Шар можно запустить только если он еще не запущен и Rigidbody доступен
         if (isBallLaunched || currentBallRigidbody == null) return;
 
-        // Обновляем значения из полей ввода
+        // ОБНОВЛЕНИЕ ПАРАМЕТРОВ ПЕРЕД ЗАПУСКОМ:
+        // Считываем актуальные значения из полей ввода
         OnSpeedInputChanged(speedInputField.text);
         OnAngleInputChanged(angleInputField.text);
 
-        // Запускаем шар
+        // ЗАПУСК ШАРА
         LaunchCurrentBall();
     }
 
     void LaunchCurrentBall()
     {
+        // АКТИВАЦИЯ ФИЗИКИ:
+        // Переключаем Rigidbody из кинематического режима в динамический
+        // Кинематический режим - объект не подвержен физике, но может двигаться
+        // Динамический режим - объект полностью управляется физическим движком
         currentBallRigidbody.isKinematic = false;
+        
+        // РАСЧЕТ НАПРАВЛЕНИЯ СИЛЫ:
+        // Повторно рассчитываем вектор направления (аналогично траектории)
         float angleInRadians = currentAngle * Mathf.Deg2Rad;
-        Vector3 launchDirection = new Vector3(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians), 0);
+        
+        // Вектор направления силы:
+        // direction = (cos(α), sin(α), 0) - единичный вектор направления
+        Vector3 launchDirection = new Vector3(
+            Mathf.Cos(angleInRadians), 
+            Mathf.Sin(angleInRadians), 
+            0
+        );
+        
+        // ПРИМЕНЕНИЕ СИЛЫ К ШАРУ:
+        // AddForce - добавляет силу к Rigidbody
+        // ForceMode.VelocityChange - мгновенно изменяет скорость, игнорируя массу
+        // Формула: сила = направление × скорость
+        // В VelocityChange скорость изменяется непосредственно, без учета массы
         currentBallRigidbody.AddForce(launchDirection * currentSpeed, ForceMode.VelocityChange);
 
-        // Отключаем траекторию после запуска
+        // ВИЗУАЛЬНЫЕ ЭФФЕКТЫ ПОСЛЕ ЗАПУСКА:
+        // Отключаем отображение траектории, так как шар уже запущен
         trajectoryLine.enabled = false;
+        
+        // УСТАНОВКА ФЛАГА СОСТОЯНИЯ:
+        // Помечаем, что шар находится в полете
         isBallLaunched = true;
     }
 

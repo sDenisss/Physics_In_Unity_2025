@@ -1,20 +1,22 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FinishTrigger : MonoBehaviour
 {
-    public GameObject panelVictory;
+    public PushCube pushCubeSystem; // Привязать систему куба!
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Убедись, что у игрока тег "Player"
+        if (other.CompareTag("Cube"))
         {
-            Debug.Log("Игра завершена.");
-            OnWin();
+            Debug.Log("Триггер финиша сработал!");
+            // Принудительно устанавливаем достижение финиша
+            pushCubeSystem.OnFinishReached();
+            
+            // // Вызываем финиш в системе куба
+            // if (pushCubeSystem != null)
+            // {
+                
+            // }
         }
-    }
-
-    void OnWin()
-    {
-        panelVictory.SetActive(true);
     }
 }

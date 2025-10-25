@@ -7,6 +7,7 @@ TagManager:
   - InputField_Speed
   - InputField_Angle
   - Ground
+  - Cube
   layers:
   - Default
   - TransparentFX
