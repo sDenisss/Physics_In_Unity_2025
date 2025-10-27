@@ -8,6 +8,9 @@ TagManager:
   - InputField_Angle
   - Ground
   - Cube
+  - BilliardBall
+  - CueBall
+  - BilliardPocket
   layers:
   - Default
   - TransparentFX

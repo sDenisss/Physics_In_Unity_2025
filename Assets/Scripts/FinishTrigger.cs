@@ -11,12 +11,6 @@ public class FinishTrigger : MonoBehaviour
             Debug.Log("Триггер финиша сработал!");
             // Принудительно устанавливаем достижение финиша
             pushCubeSystem.OnFinishReached();
-            
-            // // Вызываем финиш в системе куба
-            // if (pushCubeSystem != null)
-            // {
-                
-            // }
         }
     }
 }
