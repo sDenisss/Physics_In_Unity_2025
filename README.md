@@ -4,8 +4,8 @@
 
 ## 🌍 Выберите язык / Choose Language
 
-[![Russian](https://img.shields.io/badge/Русский-🇷🇺-red.svg)](README_RU.md)
-[![English](https://img.shields.io/badge/English-🇺🇸-blue.svg)](README_EN.md)
+[![Russian](https://img.shields.io/badge/Русский-🇷🇺-red.svg)](docs/README_RU.md)
+[![English](https://img.shields.io/badge/English-🇺🇸-blue.svg)](docs/README_EN.md)
 
 ---
 

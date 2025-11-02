@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class BilliardApplyPhysicsToBalls : MonoBehaviour
 {
@@ -17,8 +18,12 @@ public class BilliardApplyPhysicsToBalls : MonoBehaviour
     public bool setupOnStart = true;
     public bool includeInactiveBalls = false;
 
+    // [Header("Balls")]
+    // public int countOfCommonBalls = 0;
+
     private List<GameObject> allBalls = new List<GameObject>();
     private GameObject cueBall = new GameObject();
+    
 
     void Start()
     {
@@ -46,6 +51,8 @@ public class BilliardApplyPhysicsToBalls : MonoBehaviour
 
         // Поиск по тегу
         GameObject[] taggedBalls = GameObject.FindGameObjectsWithTag(ballTag);
+        // countOfCommonBalls = taggedBalls.Length;
+
         cueBall = GameObject.FindGameObjectWithTag(cueBallTag);
 
         allBalls.AddRange(taggedBalls);
@@ -78,7 +85,7 @@ public class BilliardApplyPhysicsToBalls : MonoBehaviour
             // Для битка другие настройки
             if (ball.name.Contains(cueBallTag))
             {
-                // Особые настройки для битка, если нужны
+                // Особые настройки для битка
                 rb.mass = ballMass * 1.2f; // Чуть тяжелее
             }
         }

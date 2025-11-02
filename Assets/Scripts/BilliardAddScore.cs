@@ -4,13 +4,14 @@ using TMPro;
 public class BilliardAddScore : MonoBehaviour
 {
     // Общий счет для всех лунок
-    private static int count = 0;
+    public static int count = 0;
     public TMP_Text countString;
     public string ballTag = "BilliardBall";
     public string cueBallTag = "CueBall";
     public int pointsPerBall = 1;
+    
     public BilliardBallController billiardBallController;
-
+    public BilliardRestartGame billiardRestartGame;
 
     void Start()
     {
@@ -34,20 +35,23 @@ public class BilliardAddScore : MonoBehaviour
         {
             countString.text = $"Score: {count}";
         }
+        // if (count >= finalScore)
+        // {
+        //     billiardRestartGame.RestartGame();
+        // }
     }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag(cueBallTag))
         {
-            // AddScore();
-            billiardBallController.RespawnCueBall();
+            billiardBallController.RespawnBall(cueBallTag);
             // НЕ УНИЧТОЖАЕМ биток, просто перемещаем
         }
         else if (col.CompareTag(ballTag))
         {
+            // Destroy(col.gameObject);
             AddScore();
-            Destroy(col.gameObject);
         }
     }
 }

@@ -136,7 +136,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028430138
   m_Center: {x: 0.00000040046868, y: 0.000000081025064, z: -0.00000016205017}
@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 45819371}
   - component: {fileID: 45819370}
   - component: {fileID: 45819369}
-  - component: {fileID: 45819373}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -363,33 +362,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &45819373
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45819368}
-  serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!135 &57371271
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -407,7 +379,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028678596
   m_Center: {x: -0.00000006705524, y: 0, z: 0.00000023841858}
@@ -823,7 +795,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028912313
   m_Center: {x: 0.00000038184234, y: 0.00000019092113, z: 0.00000051222753}
@@ -1117,6 +1089,7 @@ MonoBehaviour:
   cueBallTag: CueBall
   pointsPerBall: 1
   billiardBallController: {fileID: 1935480334}
+  billiardRestartGame: {fileID: 0}
 --- !u!136 &248435588
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1228,10 +1201,20 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028789824
   m_Center: {x: 0.00000040046868, y: 0, z: -0.00000010430816}
+--- !u!1 &340906139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8576513664136024845, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &340906140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7858863398874453639, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &348394775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1563,7 @@ MonoBehaviour:
   cueBallTag: CueBall
   pointsPerBall: 1
   billiardBallController: {fileID: 1935480334}
+  billiardRestartGame: {fileID: 0}
 --- !u!136 &394864237
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2050,7 +2034,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.02881394
   m_Center: {x: -0.00000001955778, y: 0, z: 0.00000015739353}
@@ -2177,7 +2161,6 @@ GameObject:
   - component: {fileID: 542104458}
   - component: {fileID: 542104457}
   - component: {fileID: 542104456}
-  - component: {fileID: 542104460}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -2277,33 +2260,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &542104460
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542104455}
-  serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &548236176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,7 +2758,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028934255
   m_Center: {x: 0.00000045727938, y: 0.00000004284084, z: 0.000000012107165}
@@ -3083,7 +3039,6 @@ GameObject:
   - component: {fileID: 812905024}
   - component: {fileID: 812905023}
   - component: {fileID: 812905022}
-  - component: {fileID: 812905026}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -3183,33 +3138,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!54 &812905026
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812905021}
-  serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &818286610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,6 +3508,7 @@ MonoBehaviour:
   cueBallTag: CueBall
   pointsPerBall: 1
   billiardBallController: {fileID: 1935480334}
+  billiardRestartGame: {fileID: 0}
 --- !u!136 &886059197
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3916,6 +3845,7 @@ MonoBehaviour:
   cueBallTag: CueBall
   pointsPerBall: 1
   billiardBallController: {fileID: 1935480334}
+  billiardRestartGame: {fileID: 0}
 --- !u!1 &949926169
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4275,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028861014
   m_Center: {x: -0.00000007636847, y: -0.000000038184226, z: 0}
@@ -4477,7 +4407,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028702246
   m_Center: {x: -0.00000007636847, y: 0.00000004284084, z: 0.00000010896474}
@@ -5276,10 +5206,30 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028924102
   m_Center: {x: -0.000000114552705, y: 0, z: -0.0000001713634}
+--- !u!1 &1312239603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2513964916684545297, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1312239604 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7044372623945820350, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1319991430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3988234628138697005, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1319991431 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3725869554068662696, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322271522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5576,6 +5526,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1108015113}
   m_LocalEulerAnglesHint: {x: 0, y: 117.498, z: 0}
+--- !u!1 &1425598719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6243945779633290726, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1425598720 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7519731141518747895, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430683276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,7 +5901,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028806344
   m_Center: {x: 0.0000005150214, y: -0.000000038184226, z: 0.000000042840817}
@@ -6373,7 +6333,6 @@ GameObject:
   - component: {fileID: 1563084628}
   - component: {fileID: 1563084627}
   - component: {fileID: 1563084626}
-  - component: {fileID: 1563084630}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Untagged
@@ -6473,33 +6432,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!54 &1563084630
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563084625}
-  serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1565957752
 GameObject:
   m_ObjectHideFlags: 0
@@ -6972,6 +6904,7 @@ MonoBehaviour:
   cueBallTag: CueBall
   pointsPerBall: 1
   billiardBallController: {fileID: 1935480334}
+  billiardRestartGame: {fileID: 0}
 --- !u!136 &1633757544
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7066,6 +6999,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 155961785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1650961437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3814806563323360385, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1650961438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2988215806597367214, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1679619273
 GameObject:
   m_ObjectHideFlags: 0
@@ -7140,6 +7083,7 @@ MonoBehaviour:
   cueBallTag: CueBall
   pointsPerBall: 1
   billiardBallController: {fileID: 1935480334}
+  billiardRestartGame: {fileID: 0}
 --- !u!136 &1680714342
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7234,6 +7178,125 @@ Transform:
   m_Children: []
   m_Father: {fileID: 155961785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1698783111
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -9071359681823161904, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -8713065508610173011, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.146
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4736263
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.201
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8568167996142998664, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -7063372055129183994, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -6243945779633290726, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -3988234628138697005, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -2948896422317571071, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -2513964916684545297, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -1960589007639298754, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: -1521839312649807133, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_Name
+      value: poolballs
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519425475118602710, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814806563323360385, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446036494263343615, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758122335985392100, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576513664136024845, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_TagString
+      value: BilliardBall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -8646250064254619170, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+    - {fileID: 2226092708669665652, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
 --- !u!135 &1707791864
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7251,7 +7314,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.028816756
   m_Center: {x: -0.000000048428785, y: -0.00000011920929, z: -0.00000017415735}
@@ -7775,7 +7838,6 @@ GameObject:
   - component: {fileID: 1802882197}
   - component: {fileID: 1802882196}
   - component: {fileID: 1802882195}
-  - component: {fileID: 1802882199}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -7875,33 +7937,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1802882199
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802882194}
-  serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1803010976
 GameObject:
   m_ObjectHideFlags: 0
@@ -8025,7 +8060,6 @@ GameObject:
   - component: {fileID: 1806899065}
   - component: {fileID: 1806899064}
   - component: {fileID: 1806899063}
-  - component: {fileID: 1806899067}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -8125,33 +8159,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1806899067
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806899062}
-  serializedVersion: 5
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1808758412
 GameObject:
   m_ObjectHideFlags: 0
@@ -8263,166 +8270,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808758412}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1825187296
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1825187300}
-  - component: {fileID: 1825187299}
-  - component: {fileID: 1825187298}
-  - component: {fileID: 1825187297}
-  - component: {fileID: 1825187302}
-  - component: {fileID: 1825187301}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &1825187297
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825187296}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1825187298
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825187296}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1825187299
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825187296}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1825187300
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825187296}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.978, y: 1.448, z: -3.06}
-  m_LocalScale: {x: 0.7530061, y: 0.7530061, z: 0.7530061}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2145214871}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1825187301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825187296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8d0a3d7618c6940bc23ec0cc51c053, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
-  moveSpeed: 5
-  jumpForce: 10
-  mouseSensitivity: 2
-  maxVerticalAngle: 45
-  cameraTransform: {fileID: 2145214871}
---- !u!54 &1825187302
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825187296}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1828879514
 GameObject:
   m_ObjectHideFlags: 0
@@ -9032,6 +8879,7 @@ GameObject:
   - component: {fileID: 1935480333}
   - component: {fileID: 1935480334}
   - component: {fileID: 1935480335}
+  - component: {fileID: 1935480336}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -9105,6 +8953,65 @@ MonoBehaviour:
   rotationSpeed: 2
   maxPower: 20
   powerMultiplier: 2
+--- !u!114 &1935480336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935480331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1678b23d7874d894c94a1da762d6af8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardRestartGame
+  cueBall: CueBall
+  ballStartPositions:
+  - ballTag: PoolBall_1
+    startPosition: {fileID: 1312239604}
+    ballPrefab: {fileID: 1312239603}
+  - ballTag: PoolBall_2
+    startPosition: {fileID: 1425598720}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 1650961438}
+    ballPrefab: {fileID: 1650961437}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 1319991431}
+    ballPrefab: {fileID: 1319991430}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 340906140}
+    ballPrefab: {fileID: 340906139}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
+  - ballTag: BilliardBall
+    startPosition: {fileID: 0}
+    ballPrefab: {fileID: 1425598719}
 --- !u!1 &1938439048
 GameObject:
   m_ObjectHideFlags: 0
@@ -9660,143 +9567,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1211711101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2145214868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2145214871}
-  - component: {fileID: 2145214870}
-  - component: {fileID: 2145214869}
-  - component: {fileID: 2145214872}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &2145214869
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145214868}
-  m_Enabled: 0
---- !u!20 &2145214870
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145214868}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &2145214871
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145214868}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.1681181, y: -0, z: -0, w: 0.9857669}
-  m_LocalPosition: {x: 0.017264152, y: 0.7994624, z: -0.088977225}
-  m_LocalScale: {x: 1.3280106, y: 1.3280106, z: 1.3280106}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1825187300}
-  m_LocalEulerAnglesHint: {x: 19.357, y: 0, z: 0}
---- !u!114 &2145214872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145214868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
-  m_Version: 2
 --- !u!4 &11334315764701664
 Transform:
   m_ObjectHideFlags: 0
@@ -10147,7 +9917,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8126671637992504816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10260,7 +10030,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935791143387785877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10308,7 +10078,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9175130514950285291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10371,7 +10141,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4601461894176246308}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10490,7 +10260,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475365572307620778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10602,7 +10372,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542436719285687517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10897,7 +10667,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7842163089451182738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11123,7 +10893,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4368958441362077241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11231,7 +11001,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7159954881431361853}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11351,7 +11121,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8166256656264404797}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11744,7 +11514,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232346325126576863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11893,7 +11663,7 @@ SceneRoots:
   - {fileID: 1595155547}
   - {fileID: 1027974573}
   - {fileID: 155961785}
-  - {fileID: 1825187300}
   - {fileID: 1211711101}
   - {fileID: 7989402635114342522}
   - {fileID: 231516772}
+  - {fileID: 1698783111}

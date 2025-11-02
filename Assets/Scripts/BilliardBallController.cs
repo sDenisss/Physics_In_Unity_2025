@@ -5,19 +5,18 @@ using UnityEngine.UI;
 public class BilliardBallController : MonoBehaviour
 {
     public Transform spawnPoint;
-    private string cueBallTag = "CueBall";
 
-    public void RespawnCueBall()
+    public void RespawnBall(string tag)
     {
-        // Всегда ищем биток по тегу, а не храним ссылку
-        GameObject cueBall = GameObject.FindWithTag(cueBallTag);
+        // Всегда ищем мяч по тегу, а не храним ссылку
+        GameObject ball = GameObject.FindWithTag(tag);
         
-        if (cueBall != null)
+        if (ball != null)
         {
             // Перемещаем существующий биток
-            cueBall.transform.position = spawnPoint.position;
+            ball.transform.position = spawnPoint.position;
             
-            Rigidbody rb = cueBall.GetComponent<Rigidbody>();
+            Rigidbody rb = ball.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.linearVelocity = Vector3.zero;
@@ -26,7 +25,7 @@ public class BilliardBallController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("CueBall not found with tag: " + cueBallTag);
+            Debug.LogError("CueBall not found with tag: " + tag);
         }
     }
 }

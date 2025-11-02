@@ -11,8 +11,7 @@ public class BilliardCueController : MonoBehaviour
     [Header("Swing Settings")]
     public float rotationSpeed = 2f; // Скорость вращения кия вокруг битка
     public float maxPower = 20f; // Максимальная сила удара
-    public float powerMultiplier = 2f; // Множитель нарастания силы
-
+    public float powerMultiplier = 1.5f; // Множитель нарастания силы
     private bool isAiming = false; // Флаг режима прицеливания
     private float currentPower = 0f; // Текущая сила удара
     private Vector3 cueOffset; // Смещение кия относительно битка
