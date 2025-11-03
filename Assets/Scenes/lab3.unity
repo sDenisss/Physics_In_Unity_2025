@@ -1205,16 +1205,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.028789824
   m_Center: {x: 0.00000040046868, y: 0, z: -0.00000010430816}
---- !u!1 &340906139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8576513664136024845, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &340906140 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7858863398874453639, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &348394775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,26 +5200,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.028924102
   m_Center: {x: -0.000000114552705, y: 0, z: -0.0000001713634}
---- !u!1 &1312239603 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2513964916684545297, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1312239604 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7044372623945820350, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1319991430 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -3988234628138697005, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1319991431 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3725869554068662696, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322271522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,16 +5496,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1108015113}
   m_LocalEulerAnglesHint: {x: 0, y: 117.498, z: 0}
---- !u!1 &1425598719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -6243945779633290726, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1425598720 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7519731141518747895, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430683276
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,16 +6959,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 155961785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1650961437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3814806563323360385, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1650961438 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2988215806597367214, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
-  m_PrefabInstance: {fileID: 1698783111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1679619273
 GameObject:
   m_ObjectHideFlags: 0
@@ -8965,53 +8915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1678b23d7874d894c94a1da762d6af8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardRestartGame
-  cueBall: CueBall
-  ballStartPositions:
-  - ballTag: PoolBall_1
-    startPosition: {fileID: 1312239604}
-    ballPrefab: {fileID: 1312239603}
-  - ballTag: PoolBall_2
-    startPosition: {fileID: 1425598720}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 1650961438}
-    ballPrefab: {fileID: 1650961437}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 1319991431}
-    ballPrefab: {fileID: 1319991430}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 340906140}
-    ballPrefab: {fileID: 340906139}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
-  - ballTag: BilliardBall
-    startPosition: {fileID: 0}
-    ballPrefab: {fileID: 1425598719}
+  cueBallTag: CueBall
+  ballTag: BilliardBall
 --- !u!1 &1938439048
 GameObject:
   m_ObjectHideFlags: 0
