@@ -93,7 +93,104 @@ public class PushCube : MonoBehaviour
         
         UpdateUI();
     }
+
+    private void CheckFinish()
+    {
+        if (!reachedFinish)
+        {
+            float currentDistance = Vector3.Distance(objectRb.position, startPoint.position);
+            if (currentDistance >= finishDistance)
+            {
+                reachedFinish = true;
+                OnFinishReached();
+            }
+        }
+    }
+
+    public void OnFinishReached()
+    {
+        Debug.Log($"🎉 ФИНИШ! Объект прошел {finishDistance} метров!");
+
+        // Показываем панель победы
+        if (finishPanel != null)
+        {
+            finishPanel.SetActive(true);
+
+            // Заполняем результаты
+            float actualDistance = Vector3.Distance(startPoint.position, objectRb.position);
+            float time = Time.timeSinceLevelLoad;
+
+            resultsText.text =
+                $"ФИНИШ!\n\n" +
+                $"Пройдено: {actualDistance:F2} м\n" +
+                // $"Масса: {mass:F1} кг\n" +
+                // $"Трение: {staticFrictionCoefficient:F2}\n" +
+                // $"Сила: {appliedForce:F1} Н\n" +
+                $"Время: {time:F1} сек";
+        }
+
+        // Меняем статус
+        if (statusText != null)
+        {
+            statusText.color = Color.green;
+            statusText.text = "ФИНИШ ДОСТИГНУТ!";
+        }
+
+        // StopMovement();
+    }
+
+    private void UpdateUI()
+    {
+        /*
+        if (forceText != null)
+            forceText.text = $"Сила: {appliedForce:F2} N\n" +
+                           $"Статич. трение: {maxStaticFriction:F2} N\n" +
+                           $"Кинет. трение: {kineticFriction:F2} N";
+        */
+
+        if (statusText != null)
+        {
+            statusText.text = $"Скорость: {objectRb.linearVelocity.magnitude:F2} m/s";
+        }
+        
+        if (distanceText != null)
+        {
+            float distanceFromStart = Vector3.Distance(objectRb.position, startPoint.position);
+            float distanceToFinish = Mathf.Max(0, finishDistance - distanceFromStart);
+            
+            distanceText.text = $"От старта: {distanceFromStart:F2} m\n" +
+                                $"До финиша: {distanceToFinish:F2} m\n" +
+                                $"Цель: {finishDistance} m";
+        }
+    }
     
+    // public void ResetObject()
+    // {
+    //     // Сбрасываем физику
+    //     objectRb.linearVelocity = Vector3.zero;
+    //     objectRb.angularVelocity = Vector3.zero;
+    //     objectRb.position = initialPosition;
+        
+    //     // Сбрасываем состояние
+    //     isMoving = false;
+    //     reachedFinish = false;
+        
+    //     // Скрываем панель победы
+    //     if (finishPanel != null)
+    //         finishPanel.SetActive(false);
+        
+    //     // Сбрасываем UI
+    //     if (statusText != null)
+    //     {
+    //         statusText.color = Color.white;
+    //     }
+        
+    //     UpdateUI();
+    //     Debug.Log("Объект сброшен в начальное положение");
+    // }
+    // */
+    
+        
     // /*
     // public void ApplyParameters()
     // {
@@ -188,99 +285,6 @@ public class PushCube : MonoBehaviour
     //     objectRb.linearVelocity = Vector3.zero;
     // }
     
-    private void CheckFinish()
-    {
-        if (!reachedFinish)
-        {
-            float currentDistance = Vector3.Distance(objectRb.position, startPoint.position);
-            if (currentDistance >= finishDistance)
-            {
-                reachedFinish = true;
-                OnFinishReached();
-            }
-        }
-    }
     
-    public void OnFinishReached()
-    {
-        Debug.Log($"🎉 ФИНИШ! Объект прошел {finishDistance} метров!");
-        
-        // Показываем панель победы
-        if (finishPanel != null)
-        {
-            finishPanel.SetActive(true);
-            
-            // Заполняем результаты
-            float actualDistance = Vector3.Distance(startPoint.position, objectRb.position);
-            float time = Time.timeSinceLevelLoad;
-            
-            resultsText.text = 
-                $"ФИНИШ!\n\n" +
-                $"Пройдено: {actualDistance:F2} м\n" +
-                // $"Масса: {mass:F1} кг\n" +
-                // $"Трение: {staticFrictionCoefficient:F2}\n" +
-                // $"Сила: {appliedForce:F1} Н\n" +
-                $"Время: {time:F1} сек";
-        }
-        
-        // Меняем статус
-        if (statusText != null)
-        {
-            statusText.color = Color.green;
-            statusText.text = "ФИНИШ ДОСТИГНУТ!";
-        }
-        
-        // StopMovement();
-    }
     
-    // public void ResetObject()
-    // {
-    //     // Сбрасываем физику
-    //     objectRb.linearVelocity = Vector3.zero;
-    //     objectRb.angularVelocity = Vector3.zero;
-    //     objectRb.position = initialPosition;
-        
-    //     // Сбрасываем состояние
-    //     isMoving = false;
-    //     reachedFinish = false;
-        
-    //     // Скрываем панель победы
-    //     if (finishPanel != null)
-    //         finishPanel.SetActive(false);
-        
-    //     // Сбрасываем UI
-    //     if (statusText != null)
-    //     {
-    //         statusText.color = Color.white;
-    //     }
-        
-    //     UpdateUI();
-    //     Debug.Log("Объект сброшен в начальное положение");
-    // }
-    // */
-    
-    private void UpdateUI()
-    {
-        /*
-        if (forceText != null)
-            forceText.text = $"Сила: {appliedForce:F2} N\n" +
-                           $"Статич. трение: {maxStaticFriction:F2} N\n" +
-                           $"Кинет. трение: {kineticFriction:F2} N";
-        */
-
-        if (statusText != null)
-        {
-            statusText.text = $"Скорость: {objectRb.linearVelocity.magnitude:F2} m/s";
-        }
-        
-        if (distanceText != null)
-        {
-            float distanceFromStart = Vector3.Distance(objectRb.position, startPoint.position);
-            float distanceToFinish = Mathf.Max(0, finishDistance - distanceFromStart);
-            
-            distanceText.text = $"От старта: {distanceFromStart:F2} m\n" +
-                                $"До финиша: {distanceToFinish:F2} m\n" +
-                                $"Цель: {finishDistance} m";
-        }
-    }
 }

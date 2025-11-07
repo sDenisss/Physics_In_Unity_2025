@@ -50,7 +50,8 @@ public class BilliardAddScore : MonoBehaviour
         }
         else if (col.CompareTag(ballTag))
         {
-            Destroy(col.gameObject);
+            col.gameObject.SetActive(false);
+            // Destroy(col.gameObject);
             AddScore();
         }
     }

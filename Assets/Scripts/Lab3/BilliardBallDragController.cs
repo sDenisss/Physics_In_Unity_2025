@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BilliardBallDragController : MonoBehaviour
 {
-    public float minVelocity = 0.01f; // Минимальная скорость для остановки
+    public float minVelocity = 0.1f; // Минимальная скорость для остановки
     public float dragMultiplier = 0.98f; // Множитель замедления
 
     private Rigidbody rb;
@@ -25,6 +25,7 @@ public class BilliardBallDragController : MonoBehaviour
             // Полная остановка при малой скорости
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+            // rb.Sleep();
         }
     }
 }

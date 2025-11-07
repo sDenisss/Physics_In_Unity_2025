@@ -35,7 +35,7 @@ public class BilliardRestartGame : MonoBehaviour
     {
         allBalls.Clear();
         
-        // Сохраняем все шары с тегом BilliardBall (PoolBall_1, PoolBall_2, ...)
+        // Сохраняем все шары с тегом BilliardBall 
         GameObject[] balls = GameObject.FindGameObjectsWithTag(ballTag);
         foreach (GameObject ball in balls)
         {

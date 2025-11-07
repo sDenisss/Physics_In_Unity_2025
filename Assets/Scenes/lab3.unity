@@ -136,7 +136,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028430138
   m_Center: {x: 0.00000040046868, y: 0.000000081025064, z: -0.00000016205017}
@@ -362,6 +362,132 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &49608238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49608239}
+  - component: {fileID: 49608243}
+  - component: {fileID: 49608242}
+  - component: {fileID: 49608241}
+  - component: {fileID: 49608240}
+  m_Layer: 0
+  m_Name: Ball13
+  m_TagString: BilliardBall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49608239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49608238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8422, y: 0.8079534, z: 0.143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8249867553952822488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49608240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49608238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &49608241
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49608238}
+  m_Material: {fileID: 13400000, guid: 0cb5de5cc824a7746a6d879058b18d69, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.028861014
+  m_Center: {x: -0.00000007636847, y: -0.000000038184226, z: 0}
+--- !u!23 &49608242
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49608238}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8668964879408942006, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &49608243
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49608238}
+  m_Mesh: {fileID: -4066051860137369374, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
 --- !u!135 &57371271
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -379,10 +505,50 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028678596
   m_Center: {x: -0.00000006705524, y: 0, z: 0.00000023841858}
+--- !u!1 &105223913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3988234628138697005, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &105223917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105223913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &105223918
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105223913}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0003076192
+  m_Center: {x: -1.0186342e-10, y: 0.0000000018480932, z: 0.0000000074360287}
 --- !u!135 &136077798
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -795,7 +961,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028912313
   m_Center: {x: 0.00000038184234, y: 0.00000019092113, z: 0.00000051222753}
@@ -910,6 +1076,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211484088}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &212160627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8576513664136024845, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &212160631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212160627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &212160632
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212160627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0003076191
+  m_Center: {x: -1.0186341e-10, y: 0.0000000037107384, z: 0.0000000074360287}
 --- !u!1 &223062425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,10 +1407,50 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028789824
   m_Center: {x: 0.00000040046868, y: 0, z: -0.00000010430816}
+--- !u!1 &323171619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519425475118602710, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &323171623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323171619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &323171624
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323171619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0003076192
+  m_Center: {x: 8.2945917e-10, y: -1.4551922e-11, z: -1.4551907e-11}
 --- !u!1 &348394775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2270,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.02881394
   m_Center: {x: -0.00000001955778, y: 0, z: 0.00000015739353}
@@ -2250,6 +2496,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341694183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &542956321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4758122335985392100, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &542956325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542956321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &542956326
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542956321}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030803485
+  m_Center: {x: -0.0000000018626451, y: 0.000000007552444, z: -0.000000007450581}
 --- !u!1 &548236176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,7 +3034,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028934255
   m_Center: {x: 0.00000045727938, y: 0.00000004284084, z: 0.000000012107165}
@@ -2990,6 +3276,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756711092}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &797584392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7063372055129183994, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &797584396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797584392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &797584397
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797584392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0003076192
+  m_Center: {x: 0.0000000017607817, y: -0.0000000074651325, z: -0.0000000074651325}
 --- !u!54 &806650522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3350,6 +3676,132 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830879023}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &855172337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 855172338}
+  - component: {fileID: 855172342}
+  - component: {fileID: 855172341}
+  - component: {fileID: 855172340}
+  - component: {fileID: 855172339}
+  m_Layer: 0
+  m_Name: Ball14
+  m_TagString: BilliardBall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &855172338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855172337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8418, y: 0.80795354, z: -0.045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8249867553952822488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855172339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855172337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &855172340
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855172337}
+  m_Material: {fileID: 13400000, guid: 0cb5de5cc824a7746a6d879058b18d69, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.028816756
+  m_Center: {x: -0.000000048428785, y: -0.00000011920929, z: -0.00000017415735}
+--- !u!23 &855172341
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855172337}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2878906130077978799, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &855172342
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855172337}
+  m_Mesh: {fileID: -3405592160699489470, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
 --- !u!1 &878244396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4265,7 +4717,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028861014
   m_Center: {x: -0.00000007636847, y: -0.000000038184226, z: 0}
@@ -4397,7 +4849,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028702246
   m_Center: {x: -0.00000007636847, y: 0.00000004284084, z: 0.00000010896474}
@@ -4957,6 +5409,46 @@ Transform:
   - {fileID: 2144611527}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1226756222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9071359681823161904, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1226756226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226756222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1226756227
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226756222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761925
+  m_Center: {x: -1.01863434e-10, y: -1.4551905e-11, z: -1.4551909e-11}
 --- !u!1 &1228164208
 GameObject:
   m_ObjectHideFlags: 0
@@ -5179,6 +5671,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231530240}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1237087792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2513964916684545297, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1237087796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237087792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1237087797
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237087792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761922
+  m_Center: {x: -1.01863434e-10, y: -1.4551909e-11, z: 0.000000014886609}
 --- !u!135 &1263403278
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5196,7 +5728,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028924102
   m_Center: {x: -0.000000114552705, y: 0, z: -0.0000001713634}
@@ -5385,6 +5917,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351766957}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1352544817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3814806563323360385, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1352544821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352544817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1352544822
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352544817}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761925
+  m_Center: {x: -0.0000000019645086, y: 0.0000000074360287, z: -1.4551915e-11}
 --- !u!1 &1382339462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,6 +6068,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1108015113}
   m_LocalEulerAnglesHint: {x: 0, y: 117.498, z: 0}
+--- !u!1 &1426088377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1960589007639298754, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1426088381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426088377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1426088382
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426088377}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761922
+  m_Center: {x: -0.0000000019645086, y: -1.4551917e-11, z: 0.0000000018480932}
 --- !u!1 &1430683276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5861,7 +6473,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028806344
   m_Center: {x: 0.0000005150214, y: -0.000000038184226, z: 0.000000042840817}
@@ -5886,6 +6498,46 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3975904, y: 1.2766774, z: 1.1740592}
   m_Center: {x: 0.0051914942, y: 0.13833968, z: 0.0014800124}
+--- !u!1 &1523353553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1521839312649807133, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1523353557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523353553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1523353558
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523353553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761914
+  m_Center: {x: 0.000000003623427, y: -9.458745e-10, z: -0.0000000074651325}
 --- !u!1 &1536670690
 GameObject:
   m_ObjectHideFlags: 0
@@ -6503,6 +7155,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1108015113}
   m_LocalEulerAnglesHint: {x: 0, y: 153.74, z: 0}
+--- !u!1 &1581799758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8713065508610173011, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1581799762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581799758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1581799763
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581799758}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761916
+  m_Center: {x: -0.000000001033186, y: -1.4551912e-11, z: -1.4551915e-11}
 --- !u!1 &1588612419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,6 +7519,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603779151}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1610923865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8568167996142998664, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610923869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610923865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1610923870
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610923865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0003076192
+  m_Center: {x: -1.0186341e-10, y: 0.0000000074360287, z: 9.1677066e-10}
 --- !u!1 &1633757542
 GameObject:
   m_ObjectHideFlags: 0
@@ -7128,6 +7860,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 155961785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1688400584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2948896422317571071, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1688400588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688400584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1688400589
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688400584}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030803497
+  m_Center: {x: 1.01863434e-10, y: -1.517883e-17, z: 0.0000000037252903}
 --- !u!1001 &1698783111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7154,7 +7926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.201
+      value: -9.717
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7220,6 +7992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: poolballs
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2519425475118602710, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
       propertyPath: m_TagString
       value: BilliardBall
@@ -7245,7 +8021,97 @@ PrefabInstance:
     - {fileID: -8646250064254619170, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
     - {fileID: 2226092708669665652, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2513964916684545297, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1237087796}
+    - targetCorrespondingSourceObject: {fileID: -2513964916684545297, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1237087797}
+    - targetCorrespondingSourceObject: {fileID: -6243945779633290726, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874630016}
+    - targetCorrespondingSourceObject: {fileID: -6243945779633290726, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874630017}
+    - targetCorrespondingSourceObject: {fileID: 3814806563323360385, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1352544821}
+    - targetCorrespondingSourceObject: {fileID: 3814806563323360385, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1352544822}
+    - targetCorrespondingSourceObject: {fileID: -3988234628138697005, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 105223917}
+    - targetCorrespondingSourceObject: {fileID: -3988234628138697005, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 105223918}
+    - targetCorrespondingSourceObject: {fileID: 8576513664136024845, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 212160631}
+    - targetCorrespondingSourceObject: {fileID: 8576513664136024845, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 212160632}
+    - targetCorrespondingSourceObject: {fileID: -9071359681823161904, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1226756226}
+    - targetCorrespondingSourceObject: {fileID: -9071359681823161904, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1226756227}
+    - targetCorrespondingSourceObject: {fileID: -1960589007639298754, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426088381}
+    - targetCorrespondingSourceObject: {fileID: -1960589007639298754, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426088382}
+    - targetCorrespondingSourceObject: {fileID: 2519425475118602710, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 323171623}
+    - targetCorrespondingSourceObject: {fileID: 2519425475118602710, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 323171624}
+    - targetCorrespondingSourceObject: {fileID: -8568167996142998664, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610923869}
+    - targetCorrespondingSourceObject: {fileID: -8568167996142998664, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1610923870}
+    - targetCorrespondingSourceObject: {fileID: -8713065508610173011, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1581799762}
+    - targetCorrespondingSourceObject: {fileID: -8713065508610173011, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1581799763}
+    - targetCorrespondingSourceObject: {fileID: 4758122335985392100, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 542956325}
+    - targetCorrespondingSourceObject: {fileID: 4758122335985392100, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 542956326}
+    - targetCorrespondingSourceObject: {fileID: -2948896422317571071, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1688400588}
+    - targetCorrespondingSourceObject: {fileID: -2948896422317571071, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1688400589}
+    - targetCorrespondingSourceObject: {fileID: -1521839312649807133, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1523353557}
+    - targetCorrespondingSourceObject: {fileID: -1521839312649807133, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1523353558}
+    - targetCorrespondingSourceObject: {fileID: -7063372055129183994, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 797584396}
+    - targetCorrespondingSourceObject: {fileID: -7063372055129183994, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 797584397}
+    - targetCorrespondingSourceObject: {fileID: 4446036494263343615, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1757777894}
+    - targetCorrespondingSourceObject: {fileID: 4446036494263343615, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1757777895}
   m_SourcePrefab: {fileID: 100100000, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
 --- !u!135 &1707791864
 SphereCollider:
@@ -7264,10 +8130,50 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.028816756
   m_Center: {x: -0.000000048428785, y: -0.00000011920929, z: -0.00000017415735}
+--- !u!1 &1757777890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4446036494263343615, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1757777894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757777890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1757777895
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757777890}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0003076191
+  m_Center: {x: 0.0000000017607817, y: -1.4551922e-11, z: -1.4551907e-11}
 --- !u!1001 &1769964219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8484,6 +9390,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1211711101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1874630012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6243945779633290726, guid: 13b9adf5d9599d54c9488f2b30101c5c, type: 3}
+  m_PrefabInstance: {fileID: 1698783111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874630016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874630012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1874630017
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874630012}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.00030761928
+  m_Center: {x: -0.0000000019645086, y: -1.4551919e-11, z: -0.0000000074651325}
 --- !u!1 &1907368717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9250,6 +10196,132 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952798981}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1954360846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954360847}
+  - component: {fileID: 1954360851}
+  - component: {fileID: 1954360850}
+  - component: {fileID: 1954360849}
+  - component: {fileID: 1954360848}
+  m_Layer: 0
+  m_Name: Ball12
+  m_TagString: BilliardBall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954360847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954360846}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8401, y: 0.8079533, z: 0.019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8249867553952822488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954360848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954360846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &1954360849
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954360846}
+  m_Material: {fileID: 13400000, guid: 0cb5de5cc824a7746a6d879058b18d69, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.028934255
+  m_Center: {x: 0.00000045727938, y: 0.00000004284084, z: 0.000000012107165}
+--- !u!23 &1954360850
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954360846}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1709277514330460371, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1954360851
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954360846}
+  m_Mesh: {fileID: -5710409059919439200, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
 --- !u!1 &1972442106
 GameObject:
   m_ObjectHideFlags: 0
@@ -9361,6 +10433,132 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1211711101}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &2101610562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101610563}
+  - component: {fileID: 2101610567}
+  - component: {fileID: 2101610566}
+  - component: {fileID: 2101610565}
+  - component: {fileID: 2101610564}
+  m_Layer: 0
+  m_Name: Ball15
+  m_TagString: BilliardBall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101610563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101610562}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8443, y: 0.8082, z: -0.1083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8249867553952822488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101610564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101610562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
+  minVelocity: 0.1
+  dragMultiplier: 0.98
+--- !u!135 &2101610565
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101610562}
+  m_Material: {fileID: 13400000, guid: 0cb5de5cc824a7746a6d879058b18d69, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.028702246
+  m_Center: {x: -0.00000007636847, y: 0.00000004284084, z: 0.00000010896474}
+--- !u!23 &2101610566
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101610562}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -4053520464898690182, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2101610567
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101610562}
+  m_Mesh: {fileID: 9112642230742947841, guid: 6d3ddfabc64986d48976e46fbdedb992, type: 3}
 --- !u!1 &2144611523
 GameObject:
   m_ObjectHideFlags: 0
@@ -9481,7 +10679,7 @@ Transform:
   m_GameObject: {fileID: 6935791143387785877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9255392, y: 0.82, z: -0.0738806}
+  m_LocalPosition: {x: 0.9957, y: 0.82, z: -0.0205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9512,7 +10710,7 @@ Transform:
   m_GameObject: {fileID: 232346325126576863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.686, y: 0.839, z: 0.201}
+  m_LocalPosition: {x: 0.8931, y: 0.8082, z: 0.0516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9822,7 +11020,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8126671637992504816}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9922,7 +11120,7 @@ Transform:
   m_GameObject: {fileID: 4368958441362077241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.73064166, y: 0.8079533, z: 0.36105093}
+  m_LocalPosition: {x: 0.9412, y: 0.8079533, z: 0.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9935,7 +11133,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6935791143387785877}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9983,7 +11181,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9175130514950285291}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10033,7 +11231,7 @@ Transform:
   m_GameObject: {fileID: 8166256656264404797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0092108, y: 0.8079533, z: -0.1743256}
+  m_LocalPosition: {x: 0.8961, y: 0.8079533, z: -0.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10046,7 +11244,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4601461894176246308}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10152,7 +11350,7 @@ Transform:
   m_GameObject: {fileID: 1475365572307620778}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13684107, y: 0.8079534, z: 0.46232706}
+  m_LocalPosition: {x: 0.8925, y: 0.8079534, z: -0.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10165,7 +11363,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475365572307620778}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10277,7 +11475,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542436719285687517}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10338,7 +11536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!4 &4338824231214524659
 Transform:
@@ -10349,7 +11547,7 @@ Transform:
   m_GameObject: {fileID: 7842163089451182738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.094, y: 0.8069, z: 0.02}
+  m_LocalPosition: {x: 1.042, y: 0.8069, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10572,7 +11770,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7842163089451182738}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10622,7 +11820,7 @@ Transform:
   m_GameObject: {fileID: 4601461894176246308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06079947, y: 0.80795354, z: -0.4543569}
+  m_LocalPosition: {x: 0.946, y: 0.80795354, z: -0.0455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10640,7 +11838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!33 &5518190768044917041
 MeshFilter:
@@ -10719,7 +11917,7 @@ Transform:
   m_GameObject: {fileID: 9175130514950285291}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24616988, y: 0.8079532, z: 0.020044738}
+  m_LocalPosition: {x: 0.944, y: 0.8079532, z: 0.079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10789,7 +11987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!23 &6397963996263742800
 MeshRenderer:
@@ -10798,7 +11996,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4368958441362077241}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10851,7 +12049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!4 &6419995640338140321
 Transform:
@@ -10862,7 +12060,7 @@ Transform:
   m_GameObject: {fileID: 7159954881431361853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9734, y: 0.8081, z: 0.0411}
+  m_LocalPosition: {x: 0.9879, y: 0.8081, z: 0.0489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10877,7 +12075,7 @@ Transform:
   m_GameObject: {fileID: 542436719285687517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5757888, y: 0.8079534, z: 0.39840877}
+  m_LocalPosition: {x: 0.893, y: 0.8079534, z: 0.1128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10906,7 +12104,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7159954881431361853}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10999,7 +12197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!4 &7208476069137946879
 Transform:
@@ -11026,7 +12224,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8166256656264404797}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11195,7 +12393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!33 &7845339173195304369
 MeshFilter:
@@ -11320,7 +12518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!33 &8226388731875806524
 MeshFilter:
@@ -11342,7 +12540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!4 &8249867553952822488
 Transform:
@@ -11368,6 +12566,10 @@ Transform:
   - {fileID: 9095361098850785452}
   - {fileID: 1959019126141354630}
   - {fileID: 2521946657653971799}
+  - {fileID: 1954360847}
+  - {fileID: 49608239}
+  - {fileID: 855172338}
+  - {fileID: 2101610563}
   - {fileID: 5649938061375428904}
   m_Father: {fileID: 543450651854335009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11391,7 +12593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!1 &8506157346399893478
 GameObject:
@@ -11419,7 +12621,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232346325126576863}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11472,7 +12674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!33 &8778974496908494970
 MeshFilter:
@@ -11499,7 +12701,7 @@ Transform:
   m_GameObject: {fileID: 8126671637992504816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.8107, z: 0.4697}
+  m_LocalPosition: {x: 0.8401, y: 0.8063, z: 0.0828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11517,7 +12719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!1 &9175130514950285291
 GameObject:
@@ -11551,7 +12753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d543ee9b3f75747a8cd0e8ac01fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BilliardBallDragController
-  minVelocity: 0.01
+  minVelocity: 0.1
   dragMultiplier: 0.98
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
