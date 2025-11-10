@@ -4,6 +4,25 @@ using UnityEngine.UI;
 
 public class PushCube : MonoBehaviour
 {
+    [System.Serializable]
+    public class CubePreset
+    {
+        public string name;
+        public float mass;
+        public float friction;
+        public Material material; // опционально - разный цвет
+    }
+
+    public CubePreset[] cubePresets = new CubePreset[]
+    {
+        new CubePreset { name = "Легкий", mass = 1f, friction = 0.2f },
+        new CubePreset { name = "Средний", mass = 3f, friction = 0.4f },
+        new CubePreset { name = "Тяжелый", mass = 5f, friction = 0.6f }
+    };
+
+    private int currentCubeIndex = 0;
+    private float playerSpeed = 5f; // Скорость игрока по умолчанию
+
     [Header("References")]
     public Rigidbody objectRb;
     public TMP_Text statusText; // Только для скорости
@@ -25,7 +44,11 @@ public class PushCube : MonoBehaviour
     // [Header("UI Inputs")]
     // public TMP_InputField frictionCoefInput;
     // public TMP_InputField cubesMassInput;      
-    // public TMP_InputField playerForceInput;
+    public TMP_InputField playerForceInput;
+    public TMP_InputField forceToPushInput;
+    public Button pushButton;
+    public Button previousButton;
+    public Button nextButton;
     // public Button applyParamsButton;
     // public Button restartButton;
 
@@ -63,10 +86,21 @@ public class PushCube : MonoBehaviour
         // Скрываем панель победы
         // if (finishPanel != null)
         //     finishPanel.SetActive(false);
+        // Назначаем обработчики новых кнопок
+        pushButton.onClick.AddListener(PushCubeWithForce);
+        previousButton.onClick.AddListener(PreviousCube);
+        nextButton.onClick.AddListener(NextCube);
+        
+        // Устанавливаем начальные значения
+        playerForceInput.text = playerSpeed.ToString("F1");
+        forceToPushInput.text = "30"; // Сила толчка по умолчанию
+        
+        // Загружаем первый куб
+        LoadCubePreset(currentCubeIndex);
         
         UpdateUI();
     }
-    
+
     void FixedUpdate()
     {
         // ПРОВЕРКА ДВИЖЕНИЯ - ФИКСИРУЕМ БАГ
@@ -74,24 +108,97 @@ public class PushCube : MonoBehaviour
         // {
         //     StartMovement();
         // }
-        
+
         // // Если объект движется, применяем силу трения
         // if (isMoving)
         // {
         //     ApplyKineticFriction();
-            
+
         //     // Проверяем остановку только если сила меньше трения
         //     if (objectRb.linearVelocity.magnitude < 0.1f && appliedForce <= kineticFriction)
         //     {
         //         StopMovement();
         //     }
-            
-            // Проверяем достижение финиша
-            CheckFinish();
+
+        // Проверяем достижение финиша
+        CheckFinish();
         // }
-       
-        
+
+
         UpdateUI();
+    }
+    
+    // Толкание куба с заданной силой
+    public void PushCubeWithForce()
+    {
+        if (float.TryParse(forceToPushInput.text, out float force))
+        {
+            objectRb.AddForce(Vector3.forward * force, ForceMode.Impulse);
+            Debug.Log($"Куб толкнут с силой: {force}N");
+        }
+    }
+
+    // Смена куба на предыдущий
+    public void PreviousCube()
+    {
+        currentCubeIndex--;
+        if (currentCubeIndex < 0) currentCubeIndex = cubePresets.Length - 1;
+        LoadCubePreset(currentCubeIndex);
+    }
+
+    // Смена куба на следующий
+    public void NextCube()
+    {
+        currentCubeIndex++;
+        if (currentCubeIndex >= cubePresets.Length) currentCubeIndex = 0;
+        LoadCubePreset(currentCubeIndex);
+    }
+
+    // Загрузка пресета куба
+    private void LoadCubePreset(int index)
+    {
+        var preset = cubePresets[index];
+        
+        // Применяем параметры
+        objectRb.mass = preset.mass;
+        ApplyFriction(preset.friction);
+        
+        // Опционально: меняем материал
+        if (preset.material != null)
+        {
+            objectRb.GetComponent<Renderer>().material = preset.material;
+        }
+        
+        Debug.Log($"Загружен куб: {preset.name} (масса: {preset.mass}, трение: {preset.friction})");
+    }
+
+    // Применение трения через Physic Material
+    private void ApplyFriction(float friction)
+    {
+        Collider collider = objectRb.GetComponent<Collider>();
+        if (collider != null)
+        {
+            PhysicsMaterial physicMat = collider.material;
+            if (physicMat == null)
+            {
+                physicMat = new PhysicsMaterial();
+                collider.material = physicMat;
+            }
+            
+            physicMat.dynamicFriction = friction;
+            physicMat.staticFriction = friction * 1.2f;
+        }
+    }
+
+    // Обновление скорости игрока из UI
+    public void UpdatePlayerSpeed()
+    {
+        if (float.TryParse(playerForceInput.text, out float speed))
+        {
+            playerSpeed = speed;
+            // Здесь можно обновить скорость игрока если нужно
+            Debug.Log($"Скорость игрока установлена: {playerSpeed} m/s");
+        }
     }
 
     private void CheckFinish()
@@ -141,28 +248,23 @@ public class PushCube : MonoBehaviour
 
     private void UpdateUI()
     {
-        /*
-        if (forceText != null)
-            forceText.text = $"Сила: {appliedForce:F2} N\n" +
-                           $"Статич. трение: {maxStaticFriction:F2} N\n" +
-                           $"Кинет. трение: {kineticFriction:F2} N";
-        */
-
         if (statusText != null)
         {
-            statusText.text = $"Скорость: {objectRb.linearVelocity.magnitude:F2} m/s";
+            statusText.text = $"Скорость: {objectRb.linearVelocity.magnitude:F2} m/s\n" +
+                             $"Куб: {cubePresets[currentCubeIndex].name}";
         }
-        
+
         if (distanceText != null)
         {
             float distanceFromStart = Vector3.Distance(objectRb.position, startPoint.position);
             float distanceToFinish = Mathf.Max(0, finishDistance - distanceFromStart);
-            
+
             distanceText.text = $"От старта: {distanceFromStart:F2} m\n" +
                                 $"До финиша: {distanceToFinish:F2} m\n" +
                                 $"Цель: {finishDistance} m";
         }
     }
+
     
     // public void ResetObject()
     // {
