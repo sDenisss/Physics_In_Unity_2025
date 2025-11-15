@@ -57,12 +57,12 @@ public class Player : MonoBehaviour
         // Получаем ссылки на действия
         moveAction = playerInput.actions["Move"];
         lookAction = playerInput.actions["Look"];
-        jumpAction = playerInput.actions["Jump"];
+        // jumpAction = playerInput.actions["Jump"];
 
         // Включаем действия
         moveAction.Enable();
         lookAction.Enable();
-        jumpAction.Enable();
+        // jumpAction.Enable();
     }
 
     private void CreateDefaultInputActions()
@@ -87,8 +87,8 @@ public class Player : MonoBehaviour
         lookAction.AddBinding("<Mouse>/delta");
 
         // Action для прыжка (Пробел)
-        var jumpAction = playerMap.AddAction("Jump", type: InputActionType.Button);
-        jumpAction.AddBinding("<Keyboard>/space");
+        // var jumpAction = playerMap.AddAction("Jump", type: InputActionType.Button);
+        // jumpAction.AddBinding("<Keyboard>/space");
 
         // Добавляем map в asset
         asset.AddActionMap(playerMap);
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         HandleMovementInput();
-        HandleJumpInput();
+        // HandleJumpInput();
         HandleMouseLook();
     }
 

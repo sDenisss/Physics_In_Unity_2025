@@ -3039,7 +3039,6 @@ GameObject:
   m_Component:
   - component: {fileID: 537613032}
   - component: {fileID: 537613033}
-  - component: {fileID: 537613034}
   - component: {fileID: 537613035}
   m_Layer: 0
   m_Name: GameObject
@@ -3079,15 +3078,12 @@ MonoBehaviour:
   - name: "\u041B\u0435\u0433\u043A\u0438\u0439"
     mass: 1
     friction: 0.2
-    material: {fileID: 0}
   - name: "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
     mass: 3
     friction: 0.4
-    material: {fileID: 0}
   - name: "\u0422\u044F\u0436\u0435\u043B\u044B\u0439"
     mass: 5
     friction: 0.6
-    material: {fileID: 0}
   objectRb: {fileID: 1478715995}
   statusText: {fileID: 48170237}
   startPoint: {fileID: 1759958666}
@@ -3100,18 +3096,6 @@ MonoBehaviour:
   nextButton: {fileID: 1510633934}
   finishPanel: {fileID: 546426881}
   resultsText: {fileID: 1081676433}
---- !u!114 &537613034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537613031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf51b85b010b9b542bab2b1b78796e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhysicsForceController
 --- !u!114 &537613035
 MonoBehaviour:
   m_ObjectHideFlags: 0

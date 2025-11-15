@@ -27,8 +27,8 @@
 **Репозиторий:** [sDenisss/Physics_In_Unity_2025](https://github.com/sDenisss/Physics_In_Unity_2025)
 
 ### 🔗 Ссылки / Links
-- [🇷🇺 Русская документация](README_RU.md)
-- [🇺🇸 English documentation](README_EN.md)
+- [🇷🇺 Русская документация](docs/README_RU.md)
+- [🇺🇸 English documentation](docs/README_EN.md)
 - [🐛 Report Issue](https://github.com/sDenisss/Physics_In_Unity_2025/issues)
 
 ---

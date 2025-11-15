@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PushCube : MonoBehaviour
@@ -65,6 +66,10 @@ public class PushCube : MonoBehaviour
         UpdateUI();
     }
 
+    void Update()
+    {
+        PushCubeViaPressKey();
+    }
     void FixedUpdate()
     {
         // Проверяем достижение финиша
@@ -111,22 +116,35 @@ public class PushCube : MonoBehaviour
     }
 
     // Применение трения через Physics Material
-    private void ApplyFriction(float friction)
+private void ApplyFriction(float friction)
+{
+    // Получаем компонент Collider с объекта, который имеет Rigidbody
+    Collider collider = objectRb.GetComponent<Collider>();
+    
+    // Проверяем, что коллайдер существует (на всякий случай)
+    if (collider != null)
     {
-        Collider collider = objectRb.GetComponent<Collider>();
-        if (collider != null)
+        // Получаем текущий Physic Material из коллайдера
+        // Physic Material определяет физические свойства поверхности
+        PhysicsMaterial physicMat = collider.material;
+        
+        // Если Physic Material еще не назначен, создаем новый
+        if (physicMat == null)
         {
-            PhysicsMaterial physicMat = collider.material;
-            if (physicMat == null)
-            {
-                physicMat = new PhysicsMaterial();
-                collider.material = physicMat;
-            }
-
-            physicMat.dynamicFriction = friction;
-            physicMat.staticFriction = friction * 1.2f;
+            physicMat = new PhysicsMaterial();
+            collider.material = physicMat;
         }
+
+        // Устанавливаем динамическое трение - сопротивление при движении
+        // Это сила, которая замедляет объект, когда он уже движется
+        physicMat.dynamicFriction = friction;
+        
+        // Устанавливаем статическое трение - сопротивление началу движения
+        // Обычно статическое трение больше динамического (примерно в 1.2 раза)
+        // Это сила, которую нужно преодолеть, чтобы сдвинуть объект с места
+        physicMat.staticFriction = friction * 1.2f;
     }
+}
 
     // Обновление скорости игрока из UI
     public void UpdatePlayerSpeed()
@@ -193,6 +211,15 @@ public class PushCube : MonoBehaviour
             distanceText.text = $"От старта: {distanceFromStart:F2} m\n" +
                                 $"До финиша: {distanceToFinish:F2} m\n" +
                                 $"Цель: {finishDistance} m";
+        }
+        UpdatePlayerSpeed();
+    }
+
+    public void PushCubeViaPressKey()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            PushCubeWithForce();
         }
     }
 }
